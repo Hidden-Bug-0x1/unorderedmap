@@ -15,4 +15,7 @@ objs/%.o: srcs/%.cpp
 	$(CXX) $(CPPFLAGS) -c $< -MMD -o $@
 
 clean:
-	$(RM) -r objs/*
+	$(RM) -r objs/* program
+
+run: program
+	./program
