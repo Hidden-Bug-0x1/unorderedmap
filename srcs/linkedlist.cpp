@@ -38,10 +38,10 @@ LinkedList::LinkedList() {
     length = 0;
 }
 
-std::string LinkedList::find(std::string key, std::string value) { // actually I don't want to do this :(
+std::string LinkedList::find(std::string key) { 
     Node* tmp = root;
     while(tmp != nullptr) {
-        if (tmp->getkey() == value) {
+        if (tmp->getkey() == key) {
             return tmp->getdata();
         }
         tmp = tmp->getnext();

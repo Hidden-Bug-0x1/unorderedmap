@@ -1,6 +1,4 @@
 #include "../hdrs/unorderedmap.hpp"
-#include "../hdrs/linkedlist.hpp"
-#include <vector>
 
 unsigned int UnorderedMap::hash(std::string value) {
     auto sum = [&](std::string s) {
@@ -18,10 +16,10 @@ UnorderedMap::UnorderedMap(StorageType st, unsigned int slots) {
     
     for (unsigned int i = 0; i < slots; i++) {
         switch(st) {
-            case StorageType::LinkedList:
+            case StorageType::LINKEDLIST:
                 this->storage.push_back( new LinkedList() );
                 break;
-            case StorageType::TwoDArray:
+            case StorageType::TWODARRAY:
                 return;
                 break;
         }
@@ -29,6 +27,10 @@ UnorderedMap::UnorderedMap(StorageType st, unsigned int slots) {
 }
 
 UnorderedMap::~UnorderedMap() {}
+
+void UnorderedMap::add(std::string key, std::string value) {
+    storage[hash(value)]->add(key, value);
+}
 
 std::string UnorderedMap::operator[] (std::string value) {
     unsigned int index = hash(value);

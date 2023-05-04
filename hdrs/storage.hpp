@@ -4,17 +4,16 @@
 #include <string>
 
 enum StorageType {
-    LinkedList,
-    TwoDArray
+    LINKEDLIST,
+    TWODARRAY
 };
 
 class Storage {
 public:
-    std::string find(std::string value);
-    void add(std::string value);
-    void operator= (std::string value);
-    std::string operator[] (unsigned int index);
-    std::string remove(unsigned int index);    
+    virtual std::string find(std::string key) = 0;
+    virtual void add(std::string key, std::string value) = 0;
+    virtual std::string operator[] (std::string key) = 0;
+    virtual std::string remove(std::string key) = 0;    
 };
 
 #endif//STORAGE_HPP

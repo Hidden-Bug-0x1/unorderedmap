@@ -1,7 +1,7 @@
 CXX = g++
 CPPFLAGS = -Wall
 
-FILES = linkedlist storage unorderedmap main
+FILES = linkedlist main unorderedmap
 
 SRCS = $(FILES:%=srcs/%.cpp)
 OBJS = $(FILES:%=objs/%.o)
