@@ -1,1 +1,1 @@
-# unorderedmap
+Simple program using linked lists to avoid collision inside an unordered map
